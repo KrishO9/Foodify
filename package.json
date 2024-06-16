@@ -1,0 +1,32 @@
+{
+  "name": "foodorderingapp",
+  "version": "1.0.0",
+  "description": "food Ordering App",
+  "main": "App.js",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrishO9/Food-Ordering-Web.git"
+  },
+  "keywords": [
+    "learning",
+    "React"
+  ],
+  "author": "Krish Kahnani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KrishO9/Food-Ordering-Web/issues"
+  },
+  "homepage": "https://github.com/KrishO9/Food-Ordering-Web#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  }
+}
