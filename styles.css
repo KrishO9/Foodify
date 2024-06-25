@@ -6,7 +6,7 @@
 }
 
 .body{
-    background-color: rgb(252, 234, 198);
+    background-color: rgb(255, 255, 255);
 }
 .logo {
     width: 80px; /* Set the desired width */
@@ -86,8 +86,8 @@
   
 
 .res-logo{
-    width:100%;
-    height : 70%;   
+    width:190px;
+    height : 170px;   
 }
 
 .res-card h4 {
@@ -101,4 +101,191 @@
     padding: 6px;
     display:flex ;
     flex-wrap:wrap;
+    gap: 0px;
 }
+
+/* Shimmer Effect CSS */
+
+/* Shimmer Effect CSS */
+
+
+/* Shimmer Effect CSS */
+
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.shimmer-container {
+    padding-top: 25px ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add a gap between shimmer cards */
+}
+
+.shimmer-card {
+    padding: 25px;
+    width: 200px;
+    overflow-wrap: break-word;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: shimmer 1.2s infinite linear;
+}
+
+.shimmer-logo {
+    width: 190px;
+    height: 170px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.shimmer-line {
+    width: 100%;
+    height: 16px;
+    border-radius: 4px;
+    background: #e0e0e0;
+    margin: 8px 0;
+}
+
+.shimmer-line-1 {
+    width: 70%;
+}
+
+.shimmer-line-2 {
+    width: 50%;
+}
+
+.shimmer-line-3 {
+    width: 60%;
+}
+
+.shimmer-line-4 {
+    width: 40%;
+}
+
+.shimmer-line-5 {
+    width: 30%;
+}
+
+.login-btn {
+    background: transparent;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(255,0,0);
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: rgb(255,0,0);
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+  }
+  
+ .login-btn span {
+    margin: 10px;
+  }
+  
+ .login-btn::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+  }
+  
+  .login-btn:hover {
+    color: #fff;
+    border: 1px solid rgb(255,0,0);
+  }
+  
+  .login-btn:hover::before {
+    box-shadow: inset 0 0 0 10em rgb(255, 0, 0);
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    width: 22em;
+    transition: all ease-in-out .5s;
+    margin-right: -2rem;
+  }
+  
+  .search__input:hover, .search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+  }
+  
+  .search__input:focus {
+    outline: none;
+    background-color: #f0eeee;
+  }
+  
+  .search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+  }
+  
+  .search__input:focus + .search__button {
+    background-color: #f0eeee;
+  }
+  
+  .search__button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+  }
+  
+  .search__button:hover {
+    cursor: pointer;
+  }
+  
+  .search__icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #b4b4b4;
+  }
+
+  .filter{
+    display: flex;
+    gap: 10px;
+    ;
+  }
+  
