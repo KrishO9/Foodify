@@ -1,7 +1,8 @@
 import { useState } from "react";
 import {LOGO_URL} from "../utils/constants"; //Braces {} used in case of named exports
-
+import { Link } from "react-router-dom";
 const Header = () => {
+  console.log("Header Rendered");
   let value = "login";
   const [stateValue , setStateValue ] = useState("login");
     return (
@@ -11,10 +12,10 @@ const Header = () => {
           </div>
         <div className="nav-items">
           <ul>
-            <li><b>Home</b></li>
-            <li><b>About</b></li>
+            <li className = "Home"><Link to = "/" className="abc"><b>Home</b></Link></li>
+            <li className = "About"><Link to = "/about" className="abc"><b>About us</b></Link></li>
             <li><b>Menu</b></li>
-            <li><b>Contact</b></li>
+            <li className = "Contact"><Link to = "/contact" className="abc"><b>Contact us</b></Link></li>
             <button className = "login-btn" onClick={()=>{setStateValue(stateValue==="login"?"logout":"login")}}>{stateValue}</button>
           </ul>
         </div>

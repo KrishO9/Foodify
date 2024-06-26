@@ -289,3 +289,253 @@
     ;
   }
   
+
+  .abc {
+    text-decoration: none;
+    color: black;
+  }
+
+  .res-card-link{
+    text-decoration: none;
+    color: black;
+  }
+
+.Menu {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Restaurant info styles */
+.restaurant-info {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.restaurant-info h1 {
+  font-size: 2.5em;
+  color: #333333;
+  margin: 0 0 10px 0;
+}
+
+.restaurant-info h2 {
+  font-size: 1.2em;
+  color: #666666;
+  margin: 5px 0;
+}
+
+.rating {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.open-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.open {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.closed {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Menu items styles */
+.itemcard_container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.itemcard_container h2 {
+  font-size: 1.8em;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-size: 1.1em;
+  color: #333333;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #4a4a4a;
+
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .Menu {
+    padding: 10px;
+  }
+
+  .restaurant-info h1 {
+    font-size: 2em;
+  }
+
+  .restaurant-info h2 {
+    font-size: 1em;
+  }
+}
+
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 62px;
+  height: 35px;
+ }
+ 
+ /* Hide default HTML checkbox */
+ .switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+ }
+ 
+ /* The slider */
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.9em;
+  width: 1.9em;
+  border-radius: 16px;
+  left: 1.2px;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px #999999;
+  transition: .4s;
+ }
+ 
+ input:checked + .slider {
+  background-color: #5fdd54;
+  border: 1px solid transparent;
+ }
+ 
+ input:checked + .slider:before {
+  transform: translateX(1.5em);
+ }
+
+ .food-img
+ {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+ }
+
+ .veg-nonveg{
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 10px;
+   }
+
+
+   .shimmer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .shimmer-restaurant-info,
+  .shimmer-menu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .shimmer-title,
+  .shimmer-subtitle,
+  .shimmer-rating,
+  .shimmer-cost,
+  .shimmer-delivery-time,
+  .shimmer-item-name,
+  .shimmer-item-price,
+  .shimmer-item-img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .shimmer-title {
+    height: 24px;
+    width: 60%;
+  }
+  
+  .shimmer-subtitle {
+    height: 20px;
+    width: 40%;
+  }
+  
+  .shimmer-rating,
+  .shimmer-cost,
+  .shimmer-delivery-time {
+    height: 20px;
+    width: 30%;
+  }
+  
+  .shimmer-item-name {
+    height: 20px;
+    width: 70%;
+  }
+  
+  .shimmer-item-price {
+    height: 20px;
+    width: 30%;
+  }
+  
+  .shimmer-item-img {
+    height: 60px;
+    width: 60px;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
