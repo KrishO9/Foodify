@@ -2,7 +2,7 @@ import { useEffect , useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { CDN_URL, MENU_API, NON_VEG_IMG, VEG_IMG } from "../utils/constants";
-import constants from "../utils/constants";
+import {MENU_API , VEG_IMG , NON_VEG_IMG} from "../utils/constants";
 import ShimmerMenu from "./ShimmerMenu";
 
 const Menu = ()=>{
@@ -45,6 +45,7 @@ const Menu = ()=>{
           <div className="restaurant-info">
             <h1>{name}</h1>
             <h2>{areaName}</h2>
+            <img className = "restro-img"></img>
             <h2 className="rating">{avgRating} stars</h2>
             <h2>{totalRatingsString}</h2>
             <h2>₹{costForTwo/100} for two</h2>
@@ -52,6 +53,7 @@ const Menu = ()=>{
             <h2 className={`open-status ${isOpen ? 'open' : 'closed'}`}>
               {isOpen ? "Open" : "Closed"}
             </h2>
+        
           </div>
       
           <div className="itemcard_container">
@@ -61,7 +63,9 @@ const Menu = ()=>{
           setVegOnly(!vegOnly); 
           console.log(vegOnly); 
         }} checked={vegOnly}/>
-  <span class="slider"></span>
+  <span class="slider">
+    <img class = "veg-slider"src = {VEG_IMG}></img>
+  </span>
     </label>
 
             <h2>Menu</h2>
@@ -74,8 +78,11 @@ const Menu = ()=>{
                 <span className="item-price">
                   ₹{item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100}
                 </span>
+                <div className="img-container">
                 <img src = {CDN_URL+item.card.info.imageId} className="food-img"></img>
+                </div>
               </div>
+              
             ))}
           </div>
         </div>

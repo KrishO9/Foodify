@@ -365,6 +365,7 @@
 }
 
 .menu-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -376,30 +377,45 @@
   border-bottom: none;
 }
 
+.item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .item-name {
   font-size: 1.1em;
   color: #333333;
 }
 
 .item-price {
+  position: absolute;
+  padding-top: 45px;
   font-weight: bold;
   color: #4a4a4a;
-
+  margin-top: 5px; /* Add some space between name and price */
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .Menu {
-    padding: 10px;
-  }
+.img-container {
+  
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
 
-  .restaurant-info h1 {
-    font-size: 2em;
-  }
+.food-img {
+  position: relative;
+  margin: 10px;
+  right : 90%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-  .restaurant-info h2 {
-    font-size: 1em;
-  }
+.veg-nonveg {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 
@@ -472,6 +488,7 @@
 
 
    .shimmer-wrapper {
+    align-self: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -538,4 +555,85 @@
       background-position: 200% 0;
     }
   }
+
+  .veg-slider{
+    margin: 0px 80px 0px 70px;
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    width:30px;
+  }
   
+  .filter-btn {
+    font-family: inherit;
+    font-size: 15px;
+    background: rgb(246, 161, 4);
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .filter-btn span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .svg-wrapper-1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .svg-wrapper {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .filter-btn:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .filter-btn:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  .filter-btn:hover span {
+    transform: translateX(5em);
+  }
+  
+  .filter-btn:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+
+  .info-card{ 
+    border: 1px solid #000000;
+    background-color: rgb(230, 224, 224);
+    padding: 5px;
+    margin: 12px
+  }
+  
+  .github-avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .info-card h3{
+    margin: 0px;
+  }
