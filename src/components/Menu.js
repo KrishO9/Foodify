@@ -1,32 +1,17 @@
-import { useEffect , useState } from "react";
-import Shimmer from "./Shimmer";
+import {useState } from "react";
 import { useParams } from "react-router-dom";
-import { CDN_URL, MENU_API, NON_VEG_IMG, VEG_IMG } from "../utils/constants";
-import {MENU_API , VEG_IMG , NON_VEG_IMG} from "../utils/constants";
+import { CDN_URL, NON_VEG_IMG, VEG_IMG } from "../utils/constants";
 import ShimmerMenu from "./ShimmerMenu";
+import useRestaurantInfo from "../utils/useRestaurantInfo";
 
-const Menu = ()=>{
+const Menu = () => {
 
-    const [resInfo ,setResInfo] = useState(null);
     const [vegOnly , setVegOnly] = useState(false);
 
     const {resId} = useParams();
 
-    useEffect(()=>{
-    fetchMenu();
-    },[]);
+    const resInfo = useRestaurantInfo(resId);
 
-    
-
-    const fetchMenu = async ()=>{
-        const menuData = await fetch(MENU_API+resId);
-
-        const jsonData = await menuData.json();
-
-       // console.log(jsonData);
-        setResInfo(jsonData);
-        
-    };
 
     if(resInfo===null){ 
     return <ShimmerMenu/>; }; 

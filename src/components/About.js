@@ -5,16 +5,26 @@ import {LOGO_URL} from '../utils/constants';
 class About extends React.Component{
     constructor(props){
         super(props);
-        //console.log("parent constructor");
+        console.log("parent constructor");
     }
 
     componentDidMount(){
-        //console.log("parent componentDidMount");
+        console.log("parent componentDidMount");
+    }
+
+    componentDidUpdate()
+    {
+        console.log("parent componentDidUpdate");
+    }
+
+    componentWillUnmount()
+    {
+        console.log("parent componentWillUnmount");
     }
 
     render()
     {
-       // console.log("parent render");
+       console.log("parent render");
         return (
             <div className="about-container">
               <h1>About</h1>

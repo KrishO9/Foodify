@@ -12,7 +12,7 @@ class UserClass extends React.Component {
     //   count2: 1,
     // };
 
-    //console.log(this.props.name+"Child constructor");
+    
     this.state = {
         userInfo : {
             name : "fs",
@@ -21,26 +21,34 @@ class UserClass extends React.Component {
             login : "fs",
         },
     };
+
+    console.log(this.state.userInfo.name+"constructor");
   }
 
     async componentDidMount() {
-      //  console.log(this.props.name+"Child componentDidMount");
+      console.log(this.state.userInfo.name+"componentDidMount");
         const data = await fetch("https://api.github.com/users/KrishO9");
         const jsonData = await data.json();
 
         this.setState({
             userInfo: jsonData,
         });
+
+        //console.log(this.state.userInfo.name+"componentDidMount");
        // console.log(json);
     }
 
     componentDidUpdate(){
-        //console.log(this.props.name+"Child componentDidUpdate");
+        console.log(this.state.userInfo.name+"componentDidUpdate");
+    }
+
+    componentWillUnmount(){
+      console.log("Child componentWillUnmount")
     }
 
   render() {
    const {login,name , location , avatar_url} = this.state.userInfo;
-    //console.log(name+"Child render");
+    console.log(name+"render");
     // const { count, count2 } = this.state;
 
     //Firstly constructor is called and then the render is called in which the page is rendered with thw dummy data

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import {LOGO_URL} from "../utils/constants"; //Braces {} used in case of named exports
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   console.log("Header Rendered");
   let value = "login";
   const [stateValue , setStateValue ] = useState("login");
+
+  const onlineStatus = useOnlineStatus();
     return (
       <div className="header">
           <div>
@@ -12,6 +15,7 @@ const Header = () => {
           </div>
         <div className="nav-items">
           <ul>
+            <li className="online-status">Online Status:{onlineStatus?"✅":"🔴"}</li>
             <li className = "Home"><Link to = "/" className="abc"><b>Home</b></Link></li>
             <li className = "About"><Link to = "/about" className="abc"><b>About us</b></Link></li>
             <li><b>Menu</b></li>
