@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { PromotedRestaurantCard } from "./RestaurantCard";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
+  const PromotedResCard = PromotedRestaurantCard(RestaurantCard);
   const [searchText, setSearchText] = useState("");
 
   const [
@@ -133,7 +134,7 @@ const Body = () => {
             }}
           >
             <svg
-              className="search__icon"
+              className="search__icon h-1.3 w-1.3 fill-#b4b4b4 cursor-pointer"
               aria-hidden="true"
               viewBox="0 0 24 24"
             >
@@ -173,14 +174,18 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="p-2 flex flex-wrap gap-0 rounded-md justify-normal">
         {filteredListOfRestaurants.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
             className="res-card-link"
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <PromotedResCard resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

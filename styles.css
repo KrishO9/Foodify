@@ -1,183 +1,7 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    border: 3px solid black ;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.body{
-    background-color: rgb(255, 255, 255);
-}
-.logo {
-    width: 80px; /* Set the desired width */
-    height: auto;
-    border-radius: 90px;
-    padding-top: 4px;
-    padding-left: 4px;
-  }
-  .nav-items {
-    padding : 0px 20px;
-  }
-  
-.nav-items > ul{
-    font-size: 17px ;
-    display: flex;
-    gap: 30px;
-    list-style-type: none;
-    
-}
-
-.nav-items > ul > li {
-    padding: 10px;
-    position: relative; /* For positioning the underline */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for text color, transform, and shadow */
-}
-
-.nav-items > ul > li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: black;
-    transition: width 0.3s ease;
-}
-
-.nav-items > ul > li:hover {
-    color: #555; /* Change text color on hover */
-    transform: scale(1.05); /* Slightly scale up the element */
-    
-}
-
-.nav-items > ul > li:hover::after {
-    width: 100%; /* Expand underline on hover */
-}
-
-
-
-.filter {
-    padding: 10px;
-    border-radius: 5px;
-    cursor : pointer;
-  }
-  
-
-.res-card
-{  
-    padding: 25px;
-    width: 220px;
-    overflow-wrap: break-word;
-}
-
-
-
-.res-card {
-    padding: 25px;
-   
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for transform and box-shadow */
-  }
-  
-  .res-card:hover {
-    transform: translateY(-5px); /* Move the card up on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
-  }
-  
-
-.res-logo{
-    width:190px;
-    height : 170px;   
-}
-
-.res-card h4 {
-    margin: 2px 0; /* Adjust the margin as needed */
-}
-
-.res-card h3 {
-    margin: 4px 0; /* Adjust the margin as needed */
-}
-.res-container{
-    padding: 6px;
-    display:flex ;
-    flex-wrap:wrap;
-    gap: 0px;
-}
-
-/* Shimmer Effect CSS */
-
-/* Shimmer Effect CSS */
-
-
-/* Shimmer Effect CSS */
-
-@keyframes shimmer {
-    0% {
-        background-position: -468px 0;
-    }
-    100% {
-        background-position: 468px 0;
-    }
-}
-
-.shimmer-container {
-    padding-top: 25px ;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Add a gap between shimmer cards */
-}
-
-.shimmer-card {
-    padding: 25px;
-    width: 200px;
-    overflow-wrap: break-word;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background: #f6f7f8;
-    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-    background-repeat: no-repeat;
-    background-size: 800px 104px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: shimmer 1.2s infinite linear;
-}
-
-.shimmer-logo {
-    width: 190px;
-    height: 170px;
-    border-radius: 4px;
-    background: #e0e0e0;
-    margin-bottom: 10px;
-}
-
-.shimmer-line {
-    width: 100%;
-    height: 16px;
-    border-radius: 4px;
-    background: #e0e0e0;
-    margin: 8px 0;
-}
-
-.shimmer-line-1 {
-    width: 70%;
-}
-
-.shimmer-line-2 {
-    width: 50%;
-}
-
-.shimmer-line-3 {
-    width: 60%;
-}
-
-.shimmer-line-4 {
-    width: 40%;
-}
-
-.shimmer-line-5 {
-    width: 30%;
-}
 
 .login-btn {
     background: transparent;
@@ -230,6 +54,7 @@
   }
 
   .search {
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -291,11 +116,6 @@
   
 
   .abc {
-    text-decoration: none;
-    color: black;
-  }
-
-  .res-card-link{
     text-decoration: none;
     color: black;
   }
@@ -1162,49 +982,65 @@
   color: #555;
 }
 
-.container {
-  margin : 100px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container .glass {
-  position: relative;
-  width: 180px;
-  height: 200px;
-  background: linear-gradient(#fff2, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 10px;
-  margin: 0 -45px;
-  backdrop-filter: blur(10px);
-  transform: rotate(calc(var(--r) * 1deg));
-}
-
-.container:hover .glass {
-  transform: rotate(0deg);
-  margin: 0 10px;
-}
-
-.container .glass::before {
-  content: attr(data-text);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(13, 13, 13, 0.25);
-}
-.container .glass svg {
-  font-size: 2.5em;
-  fill: rgba(0, 0, 0, 0.25);
-}
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
+  
+  .switch-label {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+  
+  .dark-checkbox {
+    position: absolute;
+    display: none;
+  }
+  
+  .dark-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .dark-checkbox:checked ~ .dark-slider {
+    background-color: var(--light);
+  }
+  
+  .dark-slider::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .dark-checkbox:checked ~ .dark-slider::before {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
