@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
 
   return (
     <div className="m-2 p-6 w-52 break-words rounded-md bg-slate-100 transition-transform duration-300 ease-in-out hover:translate-y-[-5px] bg-gray-200 hover:shadow-lg">
-      <p>
+      <div>
         <img
           className="w-48 h-44 rounded-md"
           src={CDN_URL + cloudinaryImageId}
@@ -18,7 +18,7 @@ const RestaurantCard = (props) => {
         <h4 className="my-1 text-gray-700">{avgRating + " stars"}</h4>
         <h4 className="my-1 text-gray-700">{sla.deliveryTime + " mins"}</h4>
         <h4 className="my-1 text-gray-700">{costForTwo}</h4>
-      </p>
+      </div>
     </div>
   );
 };

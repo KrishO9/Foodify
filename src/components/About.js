@@ -1,33 +1,41 @@
-import User from './User';
 import UserClass from './UserClass';
 import React from 'react';
 import {LOGO_URL} from '../utils/constants';
+import  UserContext  from "../utils/userContext";
 class About extends React.Component{
     constructor(props){
         super(props);
-        console.log("parent constructor");
+      //  console.log("parent constructor");
     }
 
     componentDidMount(){
-        console.log("parent componentDidMount");
+      //  console.log("parent componentDidMount");
     }
 
     componentDidUpdate()
     {
-        console.log("parent componentDidUpdate");
+       // console.log("parent componentDidUpdate");
     }
 
     componentWillUnmount()
     {
-        console.log("parent componentWillUnmount");
+      //  console.log("parent componentWillUnmount");
     }
 
     render()
     {
-       console.log("parent render");
+       //console.log("parent render");
         return (
             <div className="about-container">
               <h1>About</h1>
+              <div>
+                Logged User
+                <UserContext.Consumer>
+                  {
+                    ({loggedUser})=><h1>{loggedUser}</h1> 
+                  }
+                  </UserContext.Consumer>
+              </div>
               <UserClass name={"First"} github={"KrishO9"} location={"Guwahati"} />
               <div className="project-info">
                 <h2>About the Project</h2>

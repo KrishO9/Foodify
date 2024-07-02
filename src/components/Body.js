@@ -1,11 +1,14 @@
 import RestaurantCard, { PromotedRestaurantCard } from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
+  const { loggedUser, setUserName } = useContext(UserContext);
+
   const PromotedResCard = PromotedRestaurantCard(RestaurantCard);
   const [searchText, setSearchText] = useState("");
 
@@ -154,8 +157,8 @@ const Body = () => {
             setFilteredListOfRestaurants(filteredList);
           }}
         >
-          <div class="svg-wrapper-1">
-            <div class="svg-wrapper">
+          <div className="svg-wrapper-1">
+            <div className="svg-wrapper">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -172,6 +175,10 @@ const Body = () => {
           </div>
           <span>Top Restaurants</span>
         </button>
+        <div>
+          <label>Username:</label>
+          <input className = "border border-black p-2 m-2" value={loggedUser} onChange={(e)=>setUserName(e.target.value)}></input>
+        </div>
       </div>
 
       <div className="p-2 flex flex-wrap gap-0 rounded-md justify-normal">

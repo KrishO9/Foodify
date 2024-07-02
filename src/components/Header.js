@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { LOGO_URL } from "../utils/constants"; //Braces {} used in case of named exports
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import DarkModeToggle from "./DarkModeToggle";
+import UserContext  from "../utils/userContext";
+
 const Header = () => {
-  //console.log("Header Rendered");
+  
+  const {loggedUser} = useContext(UserContext);
   let value = "login";
   const [stateValue, setStateValue] = useState("login");
 
@@ -18,11 +21,12 @@ const Header = () => {
           alt="Logo"
         />
       </div>
-      
+
       <div className="px-5">
-        
         <ul className="flex gap-7 text-lg list-none">
-          <li><DarkModeToggle/></li>
+          <li>
+            <DarkModeToggle />
+          </li>
           <li className="relative cursor-pointer transition-transform duration-300 ease-in-out hover:text-gray-600 hover:scale-105">
             Online Status: {onlineStatus ? "✅" : "🔴"}
           </li>
@@ -52,6 +56,9 @@ const Header = () => {
           >
             {stateValue}
           </button>
+          <li>
+            <b>{loggedUser}</b>
+          </li>
         </ul>
       </div>
     </div>
