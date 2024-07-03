@@ -1,8 +1,18 @@
 import { CDN_URL } from "../utils/constants";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 
 const ItemList = ({ items ,vegOnly}) => {
     console.log("vegOnly in ItemList:", vegOnly);
+    const dispatch = useDispatch();
+
+    const handleAddItem = (i) => {
+      //dispatch an action to add item to cart
+      dispatch(addItem(i));
+    //  console.log();
+    }
 
 
   //console.log(items);
@@ -28,7 +38,7 @@ const ItemList = ({ items ,vegOnly}) => {
                 className="w-20 h-20 rounded-md object-cover ml-4"
               />
               <div className="relative right-35 top-7">
-                <button className="bg-black text-white px-2 py-1 rounded-md">
+                <button className="bg-black text-white px-2 py-1 rounded-md" onClick={() => handleAddItem(i)}>
                   +
                 </button>
               </div>

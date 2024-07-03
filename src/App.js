@@ -26,6 +26,9 @@ import Error from "./components/Error";
 import Menu from "./components/Menu";
 import UserContext from "./utils/userContext";
 import { useState, useEffect } from "react";
+import {Provider} from 'react-redux';
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
     const [userName, setUserName] = useState();
@@ -38,6 +41,7 @@ const AppLayout = () => {
         setUserName(data.name);
     },[]);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedUser: userName , setUserName}}>
       {" "}
       <div className="app">
@@ -45,6 +49,7 @@ const AppLayout = () => {
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -68,6 +73,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId", //The semicolon shows dynamic route
         element: <Menu />,
+      },
+      {
+        path:"/cart",
+        element:<Cart/>,
       },
     ],
     errorElement: <Error />,

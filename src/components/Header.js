@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import DarkModeToggle from "./DarkModeToggle";
 import UserContext  from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   
@@ -12,6 +13,10 @@ const Header = () => {
   const [stateValue, setStateValue] = useState("login");
 
   const onlineStatus = useOnlineStatus();
+
+  //Subscribing to the store using Selector (useSelector hook)
+  const cartItems = useSelector((store)=> store.cart.items);
+  console.log("cartItems in Header:", cartItems);
   return (
     <div className="flex justify-between items-center border-3 border-black p-4 bg-orange-100 sm:bg-yellow-200 lg:bg-green-100">
       <div>
@@ -41,7 +46,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="relative cursor-pointer transition-transform duration-300 ease-in-out hover:text-gray-600 hover:scale-105">
-            <b>Menu</b>
+            <Link to="/cart" ClassName="font-bold">
+            Cart ({cartItems.length})
+            </Link>
           </li>
           <li className="relative cursor-pointer transition-transform duration-300 ease-in-out hover:text-gray-600 hover:scale-105">
             <Link to="/contact" className="abc">
