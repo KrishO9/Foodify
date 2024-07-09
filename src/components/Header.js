@@ -2,14 +2,13 @@ import { useState , useContext } from "react";
 import { LOGO_URL } from "../utils/constants"; //Braces {} used in case of named exports
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import DarkModeToggle from "./DarkModeToggle";
 import UserContext  from "../utils/userContext";
 import { useSelector } from "react-redux";
+
 
 const Header = () => {
   
   const {loggedUser} = useContext(UserContext);
-  let value = "login";
   const [stateValue, setStateValue] = useState("login");
 
   const onlineStatus = useOnlineStatus();
@@ -29,9 +28,6 @@ const Header = () => {
 
       <div className="px-5">
         <ul className="flex gap-7 text-lg list-none">
-          <li>
-            <DarkModeToggle />
-          </li>
           <li className="relative cursor-pointer transition-transform duration-300 ease-in-out hover:text-gray-600 hover:scale-105">
             Online Status: {onlineStatus ? "✅" : "🔴"}
           </li>
@@ -46,7 +42,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="relative cursor-pointer transition-transform duration-300 ease-in-out hover:text-gray-600 hover:scale-105">
-            <Link to="/cart" ClassName="font-bold">
+            <Link to="/cart" className="font-bold">
             Cart ({cartItems.length})
             </Link>
           </li>

@@ -117,6 +117,7 @@ const Body = () => {
           <input
             type="text"
             className="search__input"
+            data-testid = "search-input"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
@@ -124,6 +125,7 @@ const Body = () => {
           />
           <button
             className="search__button"
+            data-testid= "searchBtn"
             onClick={() => {
               //Filter the restraunt cards and update the UI
               //searchText
@@ -188,11 +190,9 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
             className="res-card-link"
           >
-            {restaurant.info.isOpen ? (
-              <PromotedResCard resData={restaurant} />
-            ) : (
+            {
               <RestaurantCard resData={restaurant} />
-            )}
+            }
           </Link>
         ))}
       </div>

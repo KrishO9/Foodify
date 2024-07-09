@@ -1,19 +1,3 @@
-//Basic structure
-/*
--Header
-    -Logo
-    -Nav Items
--Body
-    -Search
-    -Restraunt Container
-    -Restraunt Card
-      -
--Footer
-    -copy right
-    -social media links
-    -address
-    -Contact
-*/
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "../styles.css";
@@ -30,6 +14,7 @@ import {Provider} from 'react-redux';
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
 
+
 const AppLayout = () => {
     const [userName, setUserName] = useState();
 
@@ -40,6 +25,9 @@ const AppLayout = () => {
         };
         setUserName(data.name);
     },[]);
+
+  
+
   return (
     <Provider store={appStore}>
     <UserContext.Provider value={{loggedUser: userName , setUserName}}>

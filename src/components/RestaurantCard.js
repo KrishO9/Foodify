@@ -6,7 +6,8 @@ const RestaurantCard = (props) => {
     resData?.info; // Optional chaining
 
   return (
-    <div className="m-2 p-6 w-52 break-words rounded-md bg-slate-100 transition-transform duration-300 ease-in-out hover:translate-y-[-5px] bg-gray-200 hover:shadow-lg">
+    <div className="m-2 p-6 w-52 break-words rounded-md transition-transform duration-300 ease-in-out hover:translate-y-[-5px] bg-gray-200 hover:shadow-lg"
+    data-testId = "resCard">
       <div>
         <img
           className="w-48 h-44 rounded-md"
